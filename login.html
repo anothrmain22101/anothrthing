@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">import Swal from 'sweetalert2';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+h1{
+    font-family: "IBM Plex Mono";
+    color: black;
+}
+
+h2, h5, a, input, body{
+    font-family: monospace;
+}
+
+a{
+    color: black;
+}
+
+.bg-image {
+
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp9384742.jpg&f=1&nofb=1&ipt=554b45891bade0bfee15b015b8c15a6e474706b07c8d0920d43e6d742d679a42&ipo=images");
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.float {
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<title>login</title>
+<div class="bg-image"></div>
+
+<div class="float">
+<h1>login</h1>
+<form>
+    <input type="text" id="txtuser" placeholder="username" required><br><br>
+    <input type="password" id="txtpass" placeholder="password" required><br><br>
+    <input type="checkbox" onclick="myFunction()">show password <br><br><br>
+    <input type="button" value="login" id="btn" onclick="getLogin()">
+    <br><br>
+    <h5>dont have an account? <a href="signup.html">sign up</a>!</h5>
+</form>
+</div>
+<script>
+    function myFunction() {
+  var x = document.getElementById("txtpass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+} 
+</script>
+<script type="text/javascript">
+    function getLogin(){
+        var username = document.getElementById("txtuser").value;
+        var password = document.getElementById("txtpass").value;
+        if ((username == "user.one")&&(password=="user.admin!")){
+            Swal.fire({
+            title: 'login success!',
+            text: 'welcome back, admin',
+            width: 350,
+            showConfirmButton: false,
+            })
+            setTimeout(() => {  window.location.href = "https://github.com/anothrmain22101/anothrthing"; }, 2000);
+        } 
+        if ((username == "")&&(password=="")){
+            alert("error");
+            setTimeout(() => {  location.reload(); }, 0);
+        } else {
+            setTimeout(() => {  window.location.href = "https://github.com/anothrmain22101/anothrthing"; }, 2000);
+        }
+    }
+</script>
+</body>
+</html>
