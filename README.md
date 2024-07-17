@@ -8,4 +8,4 @@ the login for admin is
 
 username: "user.one"
 
-password: "user.admin!
+password: "user.admin!"
